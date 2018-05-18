@@ -12,8 +12,8 @@
 	<view class="header">
 		<image class="logo" src="{{shop.logo}}"/>
 		<view class="info">
-			<view class="welcome ellipsis">公告：欢迎光临{{shop.name}}！</view>
-			<view class="desc ellipsis">{{shop.desc}}</view>
+			<view class="welcome ellipsis">公告：欢迎光临{{shop.restaurantName}}！</view>
+			<view class="desc ellipsis">{{shop.remark}}</view>
 
 			<view class="active-wrapper">
 				<!--<view class="active-arrow"></view>-->
@@ -45,7 +45,7 @@
 				<view class="title">{{category.categoryName}}</view>
 				<view class="goods" wx:for="{{goods}}" wx:for-index="itemId" wx:for-item="item" wx:key="id"
 							 data-id="{{item.id}}" wx:if="{{item.category == category.id}}">
-					<image class="good-pic" src="{{item.pic}}"
+					<image mode='aspectFit' class="good-pic" src="{{item.pic}}"
 								 data-id="{{item.id}}"
 								 binderror="errImage" bindtap="didClickItem"></image>
 					<view class="good-info">

@@ -25,7 +25,7 @@ Page({
       that.initCart();
       that.countDiscounts();
       wx.setNavigationBarTitle({
-        title: that.data.shop.name
+        title: that.data.shop.restaurantName
       })
       that.initAnimation();
     });
@@ -212,6 +212,7 @@ Page({
             Util.hideHub();
           });
         } else {
+          that.isSync = false;
           that.isCancelSync = false;
         }
       }, 5000)
