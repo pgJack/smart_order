@@ -1,0 +1,35 @@
+<view class="container">
+  <!--订单信息 start-->
+  <scroll-view class="order-info" scroll-y="true">
+    <view class="store-title">
+      <image src="{{shop.logo}}"></image>
+      <text>{{shop.name}}</text>
+    </view>
+    <view class="order-list">
+      <view class="order-list-item" wx:for="{{cart.items}}" wx:for-index="id"
+            wx:for-item="item" wx:key="{{id}}" wx:if="{{item > 0}}">
+        <image src="{{goods[id].pic}}"
+               data-id="{{id}}"
+               binderror="errImage"></image>
+        <view class="item-center">
+          <view class="name ellipsis">{{goods[id].name}}</view>
+          <view class="unit">{{goods[id].unit}}</view>
+          <view class="count">X{{item}}</view>
+        </view>
+        <view class="item-price">¥{{goods[id].price * item}}</view>
+      </view>
+    </view>
+  </scroll-view>
+  <!--订单信息 end-->
+
+  <!--下单 start-->
+  <view class="order-footer">
+    <view class="price" bindtap="showCartDetail">
+      <view class="count">已优惠 ¥{{cart.origTotal - cart.total}}</view>
+      <view class="total">
+        <text>合计</text> ¥{{cart.total}}</view>
+    </view>
+    <view class="submit" bindtap="didClickSubmit">提交订单</view>
+  </view>
+  <!--下单 end-->
+</view>

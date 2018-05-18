@@ -1,0 +1,22 @@
+{
+	"debug": true,
+	"pages": [
+		"page/loading/loading",
+		"page/shop/shop",
+		"page/order/order"
+	],
+	"window": {
+		"navigationBarBackgroundColor": "#000",
+		"navigationBarTextStyle": "white",
+		"backgroundColor": "#efefef",
+		"backgroundTextStyle": "dark",
+		"navigationBarTitleText": "外卖订餐",
+    "disableScroll":true
+	},
+	"networkTimeout": {
+		"request": 10000,
+		"connectSocket": 10000,
+		"uploadFile": 10000,
+		"downloadFile": 10000
+	}
+}
